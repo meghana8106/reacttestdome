@@ -16,7 +16,7 @@ function ChangeUserName() {
   const [username, setUsername] = useState('');
 
   function clickHandler() {
-    setUsername(inputValue); // Set the username to the input value
+    setUsername(inputValue); 
   }
 
   return (
