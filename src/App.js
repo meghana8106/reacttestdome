@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-rout
 import FocusableInput from '../src/components/FocusableInput';
 import TodoList from '../src/components/TodoList';
 import ChangeUserName from '../src/components/ChangeUserName';
-import Focus from '../src/components/Focus'
+import Focus from '../src/components/Focus';
+import ToggleMessage from '../src/components/ToggleMessage'
 
 const items = [ { text: 'Buy grocery', done: true },
   { text: 'Play guitar', done: false },
@@ -31,6 +32,9 @@ function App() {
               <li>
                 <Link to='/focus'>Focus</Link>
               </li>
+              <li>
+                <Link to='/togglemessage'>ToggleMessage</Link>
+              </li>
             </ul>
         </nav>
         <Routes>
@@ -40,6 +44,7 @@ function App() {
   onListClick={(event) => console.log("List clicked!")}
   onItemClick={(item, event) => { console.log(item, event) }}/>}></Route>
   <Route path='/focus' element={<Focus focused={defaultProps.focused} />}></Route>
+  <Route path='/togglemessage' element={<ToggleMessage/>}></Route>
         </Routes>
     </Router>
   );
