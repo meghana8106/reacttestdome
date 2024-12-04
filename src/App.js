@@ -4,11 +4,17 @@ import FocusableInput from '../src/components/FocusableInput';
 import TodoList from '../src/components/TodoList';
 import ChangeUserName from '../src/components/ChangeUserName';
 import Focus from '../src/components/Focus';
-import ToggleMessage from '../src/components/ToggleMessage'
+import ToggleMessage from '../src/components/ToggleMessage';
+import GroceryApp from '../src/components/GroceryApp';
 
 const items = [ { text: 'Buy grocery', done: true },
   { text: 'Play guitar', done: false },
   { text: 'Romantic dinner', done: false }
+];
+
+const products=[
+  { name: "Oranges", votes: 0 },
+  { name: "Bananas", votes: 0 }
 ];
 
 const defaultProps = {
@@ -35,6 +41,9 @@ function App() {
               <li>
                 <Link to='/togglemessage'>ToggleMessage</Link>
               </li>
+              <li>
+                <Link to='/groceryapp'>Grocery App</Link>
+              </li>
             </ul>
         </nav>
         <Routes>
@@ -45,6 +54,7 @@ function App() {
   onItemClick={(item, event) => { console.log(item, event) }}/>}></Route>
   <Route path='/focus' element={<Focus focused={defaultProps.focused} />}></Route>
   <Route path='/togglemessage' element={<ToggleMessage/>}></Route>
+  <Route path='/groceryapp' element={<GroceryApp products={products}/>}></Route>
         </Routes>
     </Router>
   );
